@@ -1,0 +1,48 @@
+<!--
+ * @Description: 
+ * @Author: hechengnan
+ * @Date: 2024-03-25 22:46:27
+ * @LastEditTime: 2024-03-25 23:09:30
+ * @LastEditors: hechengnan
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+
+<script>
+    const shuffle = function (nums) {
+        // 高手都用 slice(0) 复制数组
+        const radomNums = nums.slice(0);
+        let n = radomNums.length;
+
+        // 产生的结果有 n! 种可能
+        for (let i = 0; i < n; i++) {
+            // 从 i 到 n-1 随机选一个
+            const rand = randOne(i, n - 1);
+
+            // 交换nums数组i和rand下标的两个元素
+            [radomNums[i], radomNums[rand]] = [radomNums[rand], radomNums[i]];
+        }
+
+        return radomNums;
+    };
+
+    // 获取闭区间 [n, m] 内的一个随机整数
+    const randOne = function (n, m) {
+        return Math.floor(Math.random() * (m - n + 1)) + n;
+    };
+
+    // [m, n]
+
+    //
+
+    for (let i = 0; i < arr.length; i++) {
+        const idx = Math.floor((m - n + 1) * Math.random() + n);
+    }
+</script>

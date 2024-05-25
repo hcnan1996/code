@@ -1,0 +1,41 @@
+<!--
+ * @Description: 
+ * @Author: hechengnan
+ * @Date: 2024-03-25 22:12:32
+ * @LastEditTime: 2024-03-25 22:26:19
+ * @LastEditors: hechengnan
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+
+<script>
+    function _get(obj, path, defaultValue) {
+        let key = Array.isArray(path) ? path : path.replace(/(\[(\d)\])/g, '.$2').split('.');
+        obj = obj[key[0]];
+        console.log(obj, key[0], key, 'LLLLL--');
+        if (obj && key.length > 1) {
+            return _get(obj, key.slice(1), defaultValue);
+        }
+        return obj ? obj : defaultValue;
+    }
+
+    const obj = { a: [{ b: 1 }] };
+    console.log(_get(obj, 'a[0].b', 3)); // 1
+    console.log(_get(obj, 'a[0].c', 3)); // 3
+
+    function myget(obj, path, defaultValue) {
+        let key = Array.isArray(obj) ? path : path.replace(/\[(\d)\]/, '.$2').split('.');
+        obj = obj[key[0]];
+        if (obj && key.length) {
+            return _get(obj, key.slice(1), defaultValue);
+        }
+        return obj ? obj : defaultValue;
+    }
+</script>

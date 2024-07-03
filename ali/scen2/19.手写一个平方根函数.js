@@ -5,17 +5,17 @@
 
 //平方根函数
 function sqrt(num, n) {
-  for (let i = 0; i < num; i++) {
-    if (i * i == num) {
-      return i;
+    for (let i = 0; i < num; i++) {
+        if (i * i == num) {
+            return i;
+        }
+        if (i * i >= num) {
+            let index = i - 1;
+            while (num - index * index > n) {
+                index += n / 2;
+            }
+            return index;
+        }
     }
-    if (i * i >= num) {
-      let index = i - 1;
-      while (num - index * index > n) {
-        index += n / 2;
-      }
-      return index;
-    }
-  }
 }
-console.log(10, 0.1);
+console.log(sqrt(10, 0.1));

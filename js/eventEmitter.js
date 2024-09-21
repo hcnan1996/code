@@ -2,9 +2,10 @@
  * @Description:
  * @Author: hechengnan
  * @Date: 2024-03-19 20:57:52
- * @LastEditTime: 2024-03-19 21:38:55
+ * @LastEditTime: 2024-08-25 18:07:54
  * @LastEditors: hechengnan
  */
+// 发布订阅模式
 class EventEmitter {
     constructor() {
         this.event = {};
